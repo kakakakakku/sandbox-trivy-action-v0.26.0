@@ -1,0 +1,32 @@
+name: Trivy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  trivy-v0-25-0:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Trivy
+        uses: aquasecurity/trivy-action@0.25.0
+        with:
+          scan-type: config
+          scan-ref: .
+          trivy-config: trivy.yaml
+  trivy-v0-26-0:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Trivy
+        uses: aquasecurity/trivy-action@0.26.0
+        with:
+          scan-type: config
+          scan-ref: .
+          trivy-config: trivy.yaml
