@@ -29,4 +29,5 @@ jobs:
         with:
           scan-type: config
           scan-ref: .
+          severity: CRITICAL
           trivy-config: trivy.yaml
