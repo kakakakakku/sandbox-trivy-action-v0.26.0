@@ -1,0 +1,1 @@
+# sandbox-trivy-action-v0.26.0
